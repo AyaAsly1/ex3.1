@@ -1,0 +1,172 @@
+/* aya asly & sewar khateeb */
+/* date:3.4.2024  */
+
+body{    
+    background-image: url("background.jpg");  /*הרקע של מסך   */
+    Background-attachment:fixed; /*נעילת רקע במקום יציב  */
+    font-family: 'Bree Serif', serif;
+    /* background-repeat: repeat; */
+} 
+
+
+/* מקטע מרכזי ממורכז שכולל את כל תוכן הדף: */
+.container {
+width: 80%; /* רוחב 80% מהמסך */
+background-color: white;
+margin: 3% auto 3% auto; /* שוליים עליונים ותחתונים של . */
+box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2); /*  צללית אופקית */
+}
+
+/* :כותרת עליונה*/
+.header {
+background-image: url(banner.png);
+background-repeat: no-repeat;
+background-size: 100%  ;
+height: 350px;
+}
+
+.smallPictureDOG {
+position: relative;
+padding-left: 2%;
+height: 350px;}
+
+.smallPictureDOG img{
+position: absolute;
+width: 200px;
+border: 10px solid #ffff;
+border-radius: 200px;
+top:70%;
+left: -2%;
+} 
+
+
+/* תוכן הדף מכיל את :  Friends ,Endorsement ,Info */
+h1 {
+font-family: 'Rammetto One', cursive;
+text-align: center;
+font-size: 3vw;
+padding-top: 10px;
+text-shadow: 3px 3px #999999;
+border-radius: 1px;
+}
+
+.infoClass {
+background-color: white;
+flex-direction: row;
+
+}
+.infoClass , .EndorsementClass , .FreindsClass{
+    display: flex;
+    align-items: center;
+    padding: 2% 5% 2% 5%;  /* ריפוד של 5% לשמאל ולימין ו2%- למעלה ולמטה. */
+}
+
+/* :בלוק הטקסט */
+.infoContaiener , .EndorsementContaiener    {
+display: flex;
+flex-direction: column;
+width: 49%;
+
+}
+
+/* :בלוק התמונה  */
+.infoContaiener img , .EndorsementContaiener img{
+display: flex;
+max-height: 600px; /* גובה מקסימלי */
+max-width: 400px; /* רוחב מקסימלי */
+margin: auto;
+justify-content: center;
+width: 100%;
+align-items: center;
+
+}
+
+.infoContaiener img{
+    float: right; 
+}
+
+/* :בטקסט1 & טקסט2 מופיע מקטעים עם מידע על מיקי */
+.txt1, .txt2{
+display: flex;
+}
+
+
+.txt1{
+justify-content: center;
+}
+
+.txt2 {
+flex-direction: row;
+width: 40%;
+}
+
+
+h2 {
+font-size: 2.5vw;
+text-transform: uppercase;
+text-align: center;
+}
+
+span {
+font-style: italic;
+text-align: center;
+}
+
+
+/* קו מפריד  ביו טקסט ההמלצה להין שם הממליץ ברוחב 4 */
+hr{
+width: 40%;
+}
+
+.EndorsementClass{
+    background-image: url('clouds.webp');   /* למקטע הזה יש לו רקע חוזר על עצמו */
+	/* background-repeat: repeat; */
+	flex-direction: row-reverse;
+   }
+
+
+
+.recommends{ 
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+    border-left: solid;
+    border-width: 10px;
+    border-color: #cccaca;
+
+    margin-bottom: 15px;
+    padding: 10px; 
+    text-align: center;
+    align-items: center;   
+}
+
+.FreindsClass {
+    flex-direction: column;
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+.pictures{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.pictures img {
+    padding:  10px ;
+    height: 300px;
+    width: 200px;
+
+    
+}
+/* כותרת  תחתונה: */
+.footer {
+    background-color: #5f5b5f;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+

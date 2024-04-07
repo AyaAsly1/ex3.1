@@ -1,0 +1,115 @@
+<!-- aya asly & sewar khateeb -->
+<!-- date :3.4.2024  -->
+<!-- This project presents a dynamic site for 4 animal profiles -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Profile</title>
+    <link href="css/profile.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <!-- Banner start -->
+    <header class="header">
+
+        <div class="smallPictureDOG" style="background-image: url('<%= animInfo.files[0] %>')">  <!--  this displays the first image in the "animInfo.files" array as the background image, We built this array in JS-->
+            <img src="<%= animInfo.files[3] %>" alt="smallPicture">  <!-- displays the fourth image in the "animInfo.files" array. -->
+        </div>
+    </header>
+    <!-- Banner end -->
+    <h1> <%- animInfo.title[0] %> </h1> <!-- displays the first element in the "animInfo.title" array. -->
+
+
+    <div class="infoClass">  <!-- מקטע שמכיל מידע על מיקי INFO -->
+        <div class="infoContaiener">    <!-- :בלוק לטקסט -->
+            <% for (var i = 1; i <= animInfo.title.length;  i++ ) { %>             <!-- Here you loop over the title, and take the paragraph inside it, which is in the first member + -->
+                <br/> <%- animInfo.title[i] %>
+            <% } %>
+
+         <!-- Here we need to make a loop to go through all the text found in bio, and take its key and value. After we split it  -->
+            <% for (var i = 0; i < animInfo.bio.length;  i++ ) { %>
+                <div class="txt1"> 
+                    <div class="txt2">
+                        <p>
+                            <%= animInfo.bio[i].key %>
+                        </p>
+                    </div>
+
+                    <div class="txt2">
+                        <p>
+                            <%- animInfo.bio[i].value %>
+                        </p>
+
+                    </div>
+                </div>
+            <% } %>
+
+        </div> <!-- end of infoContaiener -->
+        <div class="infoContaiener"> <!-- :בלוק לתמונה -->
+            <img src=" <%= animInfo.files[1] %>" alt="pic">    <!--  displays the second element in the "animInfo.files" array, which indicates for "image2" -->
+        </div>
+    </div>   <!-- infoClass ended -->
+
+
+    <!--  -->
+    <!--  -->
+    <!-- class Endorsement: -->
+
+
+    <div class="EndorsementClass">
+        <div class="EndorsementContaiener"> <!-- :בלוק לטקסט -->
+            <h2> Endorsement</h2>
+            <!-- Here, too, we have to go through the endorsment array in a loop, because we don't know the number of files/texts.
+This array contains the text and author name. -->
+            <% for (var i = 0; i < animInfo.endorsement.length;  i++ ) { %>
+                <div class="recommends">
+                    <p>
+                        <%- animInfo.endorsement[i].text %>
+                    </p>
+                    <hr/>
+
+                    <span><%- animInfo.endorsement[i].name %></span>
+                </div>
+            <% } %>
+        </div>
+
+        <div class=" EndorsementContaiener"> <!-- :בלוק לתמונה -->
+            <img src="<%= animInfo.files[2] %>" alt="pic2">   <!--  displays the third element in the "animInfo.files" array, which indicates for "image3" -->
+
+        </div>
+    </div>
+
+
+    <!--  -->
+    <!--  -->
+    <!-- class Freinds: -->
+    <!--  -->
+    <!--  -->
+
+    <div class="FreindsClass">
+        <h2> Meet the whole debugging squad </h2>
+        <div class="pictures">
+            <% for (var i = 0; i < profiles.length; i++) { %> <!--It will run on all profiles, and will put a link with a picture in it  -->
+                <a href="http://localhost:3000/profile?id=<%= profiles[i].name %>">
+                    <img src="<%= profiles[i].profileImage.replace(/\\/g, '/') %>" alt="pic">   <!--  we're using the replace() method to replace all backslashes with forward slashes in the profileImage property of each profile object.
+                                                                                                     The /\\/g argument is a regular expression that matches all backslashes in the string, and the replace() method replaces them with forward slashes. -->
+                                                                                                     <!--  using chatGpt -->
+                </a>
+            <% } %>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            Zefat Academic College
+        </div>
+    </footer>
+
+
+</div>
+</body>
+
+</html>
