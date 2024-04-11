@@ -1,5 +1,6 @@
 // aya asly & sewar khateeb
 /* date: 3.4.2024 */
+// the extensions that the code imports: Ejs , Express Js
 // This project presents a dynamic site for 4 animal profiles:
 
 var express = require('express');
